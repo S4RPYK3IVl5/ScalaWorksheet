@@ -1,8 +1,10 @@
 import recursive._
 import collections._
 import expressions._
+import `implicit`._
 import frp.BankAccount
 import frp.api._
+import frp._
 
 
 object main{
@@ -21,24 +23,13 @@ object main{
 
 //    println(infinityPrimeNumbers(infinitySeq(2)).take(10).toList) // List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
 
-    //This is use case of functional react programming API
-    fictionalReactProgrammingAPI
+    // This is use case of functional react programming API
+//    fictionalReactProgrammingAPI
 
-  }
+    //Example of beautiful magic of implicit variables
+   println(createJSON)
 
-  private def fictionalReactProgrammingAPI = {
-    val aBank = new BankAccount()
-    val bBank = new BankAccount()
-    val cBank = new BankAccount()
 
-    aBank deposit 10
-    bBank deposit 20
 
-    val sum = consolidated(List(aBank, bBank, cBank))
-    println(sum())
-    aBank deposit 5
-    cBank deposit 15
-    aBank withdraw 10
-    println(sum())
   }
 }
