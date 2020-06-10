@@ -2,6 +2,10 @@ import recursive._
 import collections._
 import expressions._
 import `implicit`._
+import datastructures._
+import datastructures.list.Node
+import datastructures.list.Leaf
+import datastructures.list.None
 import frp.BankAccount
 import frp.api._
 import frp._
@@ -26,10 +30,25 @@ object main{
     // This is use case of functional react programming API
 //    fictionalReactProgrammingAPI
 
-    //Example of beautiful magic of implicit variables
-   println(createJSON)
+    // Example of beautiful magic of implicit variables
+//   println(createJSON)
 
+    iterateOverCustomList(new Leaf(1, new Leaf(3, new Leaf(-5)))) //1, 3, -5
+    println()
 
+    // Substitute the tail of current Leaf
+    val substituteList = new Leaf(1) += new Leaf(3)
+    iterateOverCustomList(substituteList) //1, 3
+    println()
+
+    // Add Leafs to the and of list
+    val addedList = new Leaf(1) +++ new Leaf(3) +++ new Leaf(-5)
+    iterateOverCustomList(addedList) //1, 3, -5
+    println()
+
+    // Add Leafs to the and of list
+    val implictedList: Node[Int] = 1 +++ 3 +++ -5
+    iterateOverCustomList(implictedList) //1, 3, -5
 
   }
 }
